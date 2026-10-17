@@ -1,0 +1,14 @@
+x, y = input("x, y = ").split()
+print(f'{x} + {y} = {int(x) + int(y)}')
+print(f'{x} - {y} = {int(x) - int(y)}')
+print(f'{x} * {y} = {int(x) * int(y)}')
+print(f'{x} / {y} = {int(x) / int(y)}')
+
+print()
+
+a = input("a = ")
+b = input("b = ")
+print('{} + {} = {}'.format(a, b, int(a) + int(b)))
+print('{} - {} = {}'.format(a, b, int(a) - int(b)))
+print('{} * {} = {}'.format(a, b, int(a) * int(b)))
+print('{} / {} = {}'.format(a, b, int(a) / int(b)))
