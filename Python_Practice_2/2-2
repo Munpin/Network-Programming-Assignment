@@ -1,0 +1,17 @@
+d = {}
+
+while True:
+    sid, name = input('학번, 이름 : ').split()
+    d[sid] = name
+
+    inputType = input('추가를 멈추려면 Fin! 입력 : ')
+    if inputType == 'Fin!':
+        break
+while True:
+    search = input('검색할 학번 혹은 종료하려면 Quit! 입력 : ')
+    if search == 'Quit!':
+        break
+    elif d.get(search) is None:
+        print('not found!')
+        continue
+    print(f'{search} 학번의 이름은 {d.get(search)}입니다.')
