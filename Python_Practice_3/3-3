@@ -1,0 +1,15 @@
+def count_vowel(str):
+  con = 0
+  vow = 0
+  for i in str.lower():
+    match i:
+      case "a" | "e" | "i" | "o" | "u":
+        vow += 1
+      case _:
+        if(i.isalpha() == False):
+          continue
+        con += 1
+  return vow, con
+
+ans = count_vowel('My name is pin!')
+print(f'{ans}')
