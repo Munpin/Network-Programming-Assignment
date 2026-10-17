@@ -1,0 +1,17 @@
+import socket
+
+host = ''
+port = 11951
+BUFF_SIZE = 128
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+server_address = (host, port)
+
+while True:
+    message = input('Enter message (quit to exit): ')
+    if message == 'quit':
+        break
+    sock.sendto(message.encode(), server_address)
+    data, server = sock.recvfrom(BUFF_SIZE)
+    print("echo message : {}".format(data.decode()))
+sock.close()
