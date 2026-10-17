@@ -1,0 +1,12 @@
+def min_max(*argv):
+  min, max = 0, 0
+  for i in argv:
+    if(max < i):
+      max = i
+    else:
+      min = i
+
+  return min, max
+
+min, max = min_max(3, 10, 6, 4, 1)
+print(f'{min}, {max}')
