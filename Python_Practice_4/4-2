@@ -1,0 +1,32 @@
+def main():
+    while True:
+        filename = input("읽을 파일 이름을 입력하세요 (그만하려면 q 입력): ")
+ 
+        if filename == "q":
+            print("프로그램을 종료합니다.")
+            return
+ 
+        try:
+            f = open(filename, "r")
+            content = f.read()
+            f.close()
+            break
+ 
+        except FileNotFoundError:
+            print("파일을 찾을 수 없습니다: " + filename)
+            print("다시 입력해주세요.\n")
+ 
+    lines = content.split("\n")
+    line_count = len(lines)
+ 
+    words = content.split()
+    word_count = len(words)
+ 
+    char_count = 0
+    for ch in content:
+        if ch != " " and ch != "\n" and ch != "\t":
+            char_count = char_count + 1
+ 
+    print("\n* characters : " + str(char_count))
+    print("* words : " + str(word_count))
+    print("* lines : " + str(line_count))
